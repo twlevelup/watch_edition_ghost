@@ -2,7 +2,8 @@
 
 var HomePage = require('../../src/js/pages/homePage'),
   Router = require('../../src/js/router'),
-  App = require('../../src/js/app');
+  App = require('../../src/js/app'),
+  $   = require('jquery');
 
 global.App = App;
 
@@ -47,15 +48,27 @@ describe('The Home Page', function() {
 
   describe('rendering', function() {
 
-    it('should produce the correct HTML', function() {
-      homePage.render();
-      expect(homePage.$el).toContainText('Hello, World!');
-    });
-
     it('returns the view object', function() {
       expect(homePage.render()).toEqual(homePage);
     });
 
   });
 
+  describe('show the homepage', function() {
+    it('shows a plus sign', function() {
+      homePage.render();
+      expect(homePage.$el.find('#emergency-button')).toHaveClass('fa fa-plus fa-5x');
+    });
+
+    it('shows a cog sign', function() {
+      homePage.render();
+      expect(homePage.$el.find('#settings-button')).toHaveClass('fa fa-cog fa-5x');
+    });
+
+    it('shows a users sign', function() {
+      homePage.render();
+      expect(homePage.$el.find('#contacts-button')).toHaveClass('fa fa-users fa-5x');
+    });
+
+  });
 });

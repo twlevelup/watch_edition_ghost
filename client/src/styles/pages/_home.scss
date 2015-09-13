@@ -1,3 +1,21 @@
 #home {
   font-style: italic;
 }
+
+.pacman-ghost {
+  background-image: url("../images/pacman_ghost.gif");
+  background-width: 100%;
+}
+
+.first-row, .second-row {
+  padding-bottom: 15px;
+}
+
+.second-row {
+  padding-right: 35px;
+}
+
+#entertainment-button {
+  width: 64px;
+  height: 64px;
+}
