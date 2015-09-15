@@ -35,7 +35,6 @@ describe('Application Router', function() {
       });
     });
 
-<<<<<<< HEAD
 	describe('#sun', function() {
 	 it('should load the sun screen', function() {
 	   router.sun();
@@ -50,7 +49,7 @@ describe('Application Router', function() {
       var isGhostPage = router.renderView.calls.argsFor(0)[0] instanceof GhostPage;
       expect(isGhostPage).toBeTruthy();
     });
-=======
+
     describe('#healthServices', function() {
       it('should load the Health Services screen', function() {
         router.healthServices();
@@ -58,8 +57,6 @@ describe('Application Router', function() {
         expect(isHealthServicesPage).toBeTruthy();
       });
     });
-
->>>>>>> health services page mvp made
   });
 
 });

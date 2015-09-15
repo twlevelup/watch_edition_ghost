@@ -10,41 +10,41 @@ describe('healthServices', function() {
 
   var healthservicesPage;
 
-  beforeEach(function () {
+  beforeEach(function() {
     healthservicesPage = new HealthservicesPage();
   });
 
-  describe('button event handlers', function () {
+  describe('button event handlers', function() {
 
-    beforeEach(function () {
+    beforeEach(function() {
       healthservicesPage.setButtonEvents();
     });
 
-    describe('left', function () {
+    describe('left', function() {
 
       xit('should have tests');
 
     });
 
-    describe('right', function () {
+    describe('right', function() {
 
       xit('should have tests');
 
     });
 
-    describe('top', function () {
+    describe('top', function() {
 
       xit('should have tests');
 
     });
 
-    describe('bottom', function () {
+    describe('bottom', function() {
 
       xit('should have tests');
 
     });
 
-    describe('face', function () {
+    describe('face', function() {
 
       xit('should have tests');
 
@@ -52,12 +52,12 @@ describe('healthServices', function() {
 
   });
 
-  describe('rendering', function () {
+  describe('rendering', function() {
 
-    it('should produce the correct HTML', function () {
+    it('should produce the correct HTML', function() {
       healthservicesPage.render();
       var html = healthservicesPage.$el.html();
-      expect(html).toContainText('National Services' );
+      expect(html).toContainText('National Services');
       expect(html).toContainText('0488888888');
       expect(html).toContainText('10km');
     });
@@ -66,26 +66,26 @@ describe('healthServices', function() {
       expect(healthservicesPage.render()).toEqual(healthservicesPage);
     });
 
-    it('should display 3 health services names', function(){
+    it('should display 3 health services names', function() {
       healthservicesPage.render();
       var html = healthservicesPage.$el.html();
-      expect(html).toContainText('National Services' );
+      expect(html).toContainText('National Services');
       expect(html).toContainText('Echo Services');
       expect(html).toContainText('Help Me');
     });
 
-    it('should display 3 health services contacts', function(){
+    it('should display 3 health services contacts', function() {
       healthservicesPage.render();
       var html = healthservicesPage.$el.html();
-      expect(html).toContainText('0488888888' );
+      expect(html).toContainText('0488888888');
       expect(html).toContainText('0499999999');
       expect(html).toContainText('0477777777');
     });
 
-    it('should display 3 health services distances', function(){
+    it('should display 3 health services distances', function() {
       healthservicesPage.render();
       var html = healthservicesPage.$el.html();
-      expect(html).toContainText('10km' );
+      expect(html).toContainText('10km');
       expect(html).toContainText('12km');
       expect(html).toContainText('11km');
     });

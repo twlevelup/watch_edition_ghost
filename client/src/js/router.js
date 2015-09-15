@@ -12,6 +12,7 @@ var Router = require('./framework/router.js'),
   sunPage = new SunPage(),
   ghostPage = new GhostPage(),
   healthServicesPage = new HealthServicesPage();
+  ghostPage = new GhostPage();
 
 
 var AppRouter = Router.extend({
@@ -32,16 +33,16 @@ var AppRouter = Router.extend({
     this.renderView(contactsPage);
   },
 
+  healthServices: function () {
+    this.renderView(healthServicesPage);
+  },
+
   sun: function() {
     this.renderView(sunPage);
   },
 
   ghost: function() {
     this.renderView(ghostPage);
-  },
-
-  healthServices: function () {
-    this.renderView(healthServicesPage);
   }
 
 });

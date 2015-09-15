@@ -16,7 +16,7 @@ var GhostPage = Page.extend({
     face: 'goToHome'
   },
 
-  goToHome: function(){
+  goToHome: function() {
     global.App.navigate('');
   },
 

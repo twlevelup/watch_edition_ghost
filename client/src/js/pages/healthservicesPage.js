@@ -21,17 +21,17 @@ var HealthservicesPage = Page.extend({
     var healthServices = [{
       serviceName: 'National Services',
       contactNum: '0488888888',
-      kmDist: '10km',
+      kmDist: '10km'
     },
     {
       serviceName: 'Echo Services',
       contactNum: '0499999999',
-      kmDist: '12km',
+      kmDist: '12km'
     },
     {
       serviceName: 'Help Me',
       contactNum: '0477777777',
-      kmDist: '11km',
+      kmDist: '11km'
     }
   ];
 

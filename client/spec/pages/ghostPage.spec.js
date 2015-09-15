@@ -46,7 +46,7 @@ describe('ghost', function() {
 
     describe('face', function() {
 
-      it('routes to the home page', function(){
+      it('routes to the home page', function() {
         spyOn(global.App, 'navigate');
         ghostPage.trigger('face');
         expect(global.App.navigate).toHaveBeenCalledWith('');
