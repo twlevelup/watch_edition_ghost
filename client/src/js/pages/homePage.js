@@ -10,20 +10,25 @@ var homeScreen = PageView.extend({
 
   buttonEvents: {
     right: 'goToContacts',
-    top: 'scrollUp',
-    bottom: 'scrollDown'
+    top: 'goToEmergency',
+    bottom: 'goToSettings',
+    left: 'gotToDistractions'
   },
 
   goToContacts: function() {
     global.App.navigate('contacts');
   },
 
-  scrollUp: function() {
-    $('#watch-face').animate({scrollTop: '-=70px'});
+  goToEmergency: function() {
+    global.App.navigate('emergency');
   },
 
-  scrollDown: function() {
-    $('#watch-face').animate({scrollTop: '+=70px'});
+  goToSettings: function() {
+    global.App.navigate('settings');
+  },
+
+  gotToDistractions: function() {
+    global.App.navigate('distractions');
   },
 
   render: function() {

@@ -27,23 +27,31 @@ describe('The Home Page', function() {
     });
 
     describe('top', function() {
-      it('should scroll the watch face up', function() {
-        spyOn(homePage, 'scrollUp');
+      it('should take the user to the emergency page', function() {
+        spyOn(global.App, 'navigate');
         homePage.setButtonEvents();
         homePage.trigger('top');
-        expect(homePage.scrollUp).toHaveBeenCalled();
+        expect(global.App.navigate).toHaveBeenCalledWith('emergency');
       });
     });
 
     describe('bottom', function() {
-      it('should scroll the watch face down', function() {
-        spyOn(homePage, 'scrollDown');
+      it('should take the user to the settings page', function() {
+        spyOn(global.App, 'navigate');
         homePage.setButtonEvents();
         homePage.trigger('bottom');
-        expect(homePage.scrollDown).toHaveBeenCalled();
+        expect(global.App.navigate).toHaveBeenCalledWith('settings');
       });
     });
 
+    describe('left', function() {
+      it('should take the user to the distractions page', function() {
+        spyOn(global.App, 'navigate');
+        homePage.setButtonEvents();
+        homePage.trigger('left');
+        expect(global.App.navigate).toHaveBeenCalledWith('distractions');
+      });
+    });
   });
 
   describe('rendering', function() {
