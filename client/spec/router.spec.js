@@ -3,7 +3,10 @@
 var AppRouter = require('../src/js/router.js'),
   PageView = require('../src/js/framework/page'),
   HomePage = require('../src/js/pages/homePage'),
-  ContactPage = require('../src/js/pages/contactsPage');
+  ContactPage = require('../src/js/pages/contactsPage'),
+  SunPage = require('../src/js/pages/sunPage'),
+  GhostPage = require('../src/js/pages/ghostPage');
+
 
 describe('Application Router', function() {
 
@@ -32,6 +35,23 @@ describe('Application Router', function() {
       });
     });
 
+	describe('#sun', function() {
+	 it('should load the sun screen', function() {
+	   router.sun();
+	   var isSunPage = router.renderView.calls.argsFor(0)[0] instanceof SunPage;
+	   expect(isSunPage).toBeTruthy();
+	 });
+	});
+
+  describe('#ghost', function(){
+    it('should show the ghost screen', function(){
+      router.ghost();
+      var isGhostPage = router.renderView.calls.argsFor(0)[0] instanceof GhostPage;
+      expect(isGhostPage).toBeTruthy();
+    });
   });
+
+});
+
 
 });
