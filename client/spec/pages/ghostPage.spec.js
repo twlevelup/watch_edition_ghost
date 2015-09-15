@@ -46,7 +46,11 @@ describe('ghost', function() {
 
     describe('face', function() {
 
-      xit('should have tests');
+      it('routes to the home page', function(){
+        spyOn(global.App, 'navigate');
+        ghostPage.trigger('face');
+        expect(global.App.navigate).toHaveBeenCalledWith('');
+      });
 
     });
 

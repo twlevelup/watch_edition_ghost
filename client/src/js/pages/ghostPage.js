@@ -13,7 +13,11 @@ var GhostPage = Page.extend({
     left: '',
     top: '',
     bottom: '',
-    face: ''
+    face: 'goToHome'
+  },
+
+  goToHome: function(){
+    global.App.navigate('');
   },
 
   render: function() {
