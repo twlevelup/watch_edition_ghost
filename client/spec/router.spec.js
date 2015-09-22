@@ -5,8 +5,8 @@ var AppRouter = require('../src/js/router.js'),
   HomePage = require('../src/js/pages/homePage'),
   ContactPage = require('../src/js/pages/contactsPage'),
   SunPage = require('../src/js/pages/sunPage'),
-  GhostPage = require('../src/js/pages/ghostPage');
-
+  GhostPage = require('../src/js/pages/ghostPage'),
+  HealthServicesPage = require('../src/js/pages/healthServicesPage');
 
 describe('Application Router', function() {
 
@@ -35,6 +35,7 @@ describe('Application Router', function() {
       });
     });
 
+<<<<<<< HEAD
 	describe('#sun', function() {
 	 it('should load the sun screen', function() {
 	   router.sun();
@@ -49,6 +50,16 @@ describe('Application Router', function() {
       var isGhostPage = router.renderView.calls.argsFor(0)[0] instanceof GhostPage;
       expect(isGhostPage).toBeTruthy();
     });
+=======
+    describe('#healthServices', function() {
+      it('should load the Health Services screen', function() {
+        router.healthServices();
+        var isHealthServicesPage = router.renderView.calls.argsFor(0)[0] instanceof HealthServicesPage;
+        expect(isHealthServicesPage).toBeTruthy();
+      });
+    });
+
+>>>>>>> health services page mvp made
   });
 
 });
