@@ -1,6 +1,6 @@
 'use strict';
 
-var HealthservicesPage = require('../../src/js/pages/healthservicesPage.js'),
+var HealthServicesPage = require('../../src/js/pages/healthServicesPage.js'),
   Router = require('../../src/js/router'),
   App = require('../../src/js/app');
 
