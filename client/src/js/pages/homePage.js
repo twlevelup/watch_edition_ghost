@@ -28,6 +28,7 @@ var homeScreen = PageView.extend({
 
   render: function() {
     this.$el.html(this.template());
+    this.timer();
     return this;
   }
 

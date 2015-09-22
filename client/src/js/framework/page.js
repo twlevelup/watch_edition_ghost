@@ -12,7 +12,13 @@ var pageView = Backbone.View.extend({
 
   back: function() {
     history.back();
+  },
+
+  timer: function() {
+    setTimeout(function(){ global.App.navigate('ghost'); }, 30000);
   }
+
+
 
 });
 
