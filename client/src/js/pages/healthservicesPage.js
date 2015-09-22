@@ -2,11 +2,11 @@
 
 var Page = require('../framework/page');
 
-var HealthservicesPage = Page.extend({
+var HealthServicesPage = Page.extend({
 
   id: 'healthservices-page',
 
-  template: require('../../templates/pages/healthservicesPage.hbs'),
+  template: require('../../templates/pages/healthServicesPage.hbs'),
 
   buttonEvents: {
     right: '',
@@ -42,4 +42,4 @@ var HealthservicesPage = Page.extend({
 
 });
 
-module.exports = HealthservicesPage;
+module.exports = HealthServicesPage;
