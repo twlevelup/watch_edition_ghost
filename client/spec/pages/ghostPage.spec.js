@@ -22,25 +22,41 @@ describe('ghost', function() {
 
     describe('left', function() {
 
-      xit('should have tests');
+      it('routes to the home page', function() {
+        spyOn(global.App, 'navigate');
+        ghostPage.trigger('left');
+        expect(global.App.navigate).toHaveBeenCalledWith('');
+      });
 
     });
 
     describe('right', function() {
 
-      xit('should have tests');
+      it('routes to the home page', function() {
+        spyOn(global.App, 'navigate');
+        ghostPage.trigger('right');
+        expect(global.App.navigate).toHaveBeenCalledWith('');
+      });
 
     });
 
     describe('top', function() {
 
-      xit('should have tests');
+      it('routes to the home page', function() {
+        spyOn(global.App, 'navigate');
+        ghostPage.trigger('top');
+        expect(global.App.navigate).toHaveBeenCalledWith('');
+      });
 
     });
 
     describe('bottom', function() {
 
-      xit('should have tests');
+      it('routes to the home page', function() {
+        spyOn(global.App, 'navigate');
+        ghostPage.trigger('bottom');
+        expect(global.App.navigate).toHaveBeenCalledWith('');
+      });
 
     });
 

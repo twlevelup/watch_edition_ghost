@@ -9,10 +9,10 @@ var GhostPage = Page.extend({
   template: require('../../templates/pages/ghostPage.hbs'),
 
   buttonEvents: {
-    right: '',
-    left: '',
-    top: '',
-    bottom: '',
+    right: 'goToHome',
+    left: 'goToHome',
+    top: 'goToHome',
+    bottom: 'goToHome',
     face: 'goToHome'
   },
 
