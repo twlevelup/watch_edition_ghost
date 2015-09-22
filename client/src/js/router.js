@@ -21,7 +21,7 @@ var AppRouter = Router.extend({
     '': 'home',
     contacts: 'contacts',
     sun: 'sun',
-    ghost: 'ghost'
+    ghost: 'ghost',
     healthServices: 'healthServices'
   },
 
