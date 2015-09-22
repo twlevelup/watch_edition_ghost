@@ -8,7 +8,7 @@ global.App = App;
 
 describe('healthServices', function() {
 
-  var healthservicesPage;
+  var healthServicesPage;
 
   beforeEach(function() {
     healthServicesPage = new HealthServicesPage();
