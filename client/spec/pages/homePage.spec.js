@@ -3,15 +3,18 @@
 var HomePage = require('../../src/js/pages/homePage'),
   Router = require('../../src/js/router'),
   App = require('../../src/js/app'),
-  $   = require('jquery');
+  $   = require('jquery'),
+  GhostPage = require('../../src/js/pages/ghostPage');
 
 global.App = App;
 
 describe('The Home Page', function() {
   var homePage;
+  var ghostPage;
 
   beforeEach(function() {
     homePage = new HomePage();
+    ghostPage = new GhostPage();
   });
 
   describe('button event handlers', function() {
@@ -58,6 +61,12 @@ describe('The Home Page', function() {
 
     it('returns the view object', function() {
       expect(homePage.render()).toEqual(homePage);
+    });
+
+    it('go to ghost page after 30 seconds', function() {
+      spyOn(global.App, 'navigate');
+      homePage.render();
+      setTimeout(function() { expect(global.App.navigate).toHaveBeenCalledWith('ghost'); }, 30000);
     });
 
   });

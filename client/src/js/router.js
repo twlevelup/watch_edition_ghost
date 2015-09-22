@@ -6,9 +6,12 @@ var Router = require('./framework/router.js'),
   ContactsPage = require('./pages/contactsPage'),
   SunPage = require('./pages/sunPage'),
   GhostPage = require('./pages/ghostPage'),
+  HealthServicesPage = require('./pages/healthServicesPage'),
   homePage = new HomePage(),
   contactsPage = new ContactsPage(),
   sunPage = new SunPage(),
+  ghostPage = new GhostPage(),
+  healthServicesPage = new HealthServicesPage();
   ghostPage = new GhostPage();
 
 
@@ -18,7 +21,8 @@ var AppRouter = Router.extend({
     '': 'home',
     contacts: 'contacts',
     sun: 'sun',
-    ghost: 'ghost'
+    ghost: 'ghost',
+    healthServices: 'healthServices'
   },
 
   home: function() {
@@ -27,6 +31,10 @@ var AppRouter = Router.extend({
 
   contacts: function() {
     this.renderView(contactsPage);
+  },
+
+  healthServices: function () {
+    this.renderView(healthServicesPage);
   },
 
   sun: function() {
