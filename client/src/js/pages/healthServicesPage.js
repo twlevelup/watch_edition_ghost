@@ -16,11 +16,11 @@ var HealthServicesPage = Page.extend({
     face: ''
   },
 
-  returnHome: function () {
+  returnHome: function() {
     global.App.navigate('');
   },
 
-  goBack: function () {
+  goBack: function() {
     this.back();
   },
 

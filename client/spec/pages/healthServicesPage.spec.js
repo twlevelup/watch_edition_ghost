@@ -21,7 +21,7 @@ describe('healthServices', function() {
     });
 
     describe('left', function() {
-      it('should take you back', function(){
+      it('should take you back', function() {
         spyOn(healthServicesPage, 'back');
         healthServicesPage.trigger('left');
         expect(healthServicesPage.back).toHaveBeenCalled();
@@ -31,7 +31,7 @@ describe('healthServices', function() {
 
     describe('top', function() {
 
-      it('should take you to the home page', function () {
+      it('should take you to the home page', function() {
         spyOn(global.App, 'navigate');
         healthServicesPage.trigger('top');
         expect(global.App.navigate).toHaveBeenCalledWith('');
