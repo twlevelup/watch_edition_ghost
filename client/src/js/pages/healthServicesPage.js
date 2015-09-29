@@ -10,10 +10,18 @@ var HealthServicesPage = Page.extend({
 
   buttonEvents: {
     right: '',
-    left: '',
-    top: '',
+    left: 'goBack',
+    top: 'returnHome',
     bottom: '',
     face: ''
+  },
+
+  returnHome: function () {
+    global.App.navigate('');
+  },
+
+  goBack: function () {
+    this.back();
   },
 
   render: function() {

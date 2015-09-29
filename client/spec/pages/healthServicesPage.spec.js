@@ -1,6 +1,6 @@
 'use strict';
 
-var HealthServicesPage = require('../../src/js/pages/healthServicesPage.js'),
+var HealthServicesPage = require('../../src/js/pages/healthServicesPage'),
   Router = require('../../src/js/router'),
   App = require('../../src/js/app');
 
@@ -21,32 +21,21 @@ describe('healthServices', function() {
     });
 
     describe('left', function() {
-
-      xit('should have tests');
-
-    });
-
-    describe('right', function() {
-
-      xit('should have tests');
+      it('should take you back', function(){
+        spyOn(healthServicesPage, 'back');
+        healthServicesPage.trigger('left');
+        expect(healthServicesPage.back).toHaveBeenCalled();
+      });
 
     });
 
     describe('top', function() {
 
-      xit('should have tests');
-
-    });
-
-    describe('bottom', function() {
-
-      xit('should have tests');
-
-    });
-
-    describe('face', function() {
-
-      xit('should have tests');
+      it('should take you to the home page', function () {
+        spyOn(global.App, 'navigate');
+        healthServicesPage.trigger('top');
+        expect(global.App.navigate).toHaveBeenCalledWith('');
+      });
 
     });
 
