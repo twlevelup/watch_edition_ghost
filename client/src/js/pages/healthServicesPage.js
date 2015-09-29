@@ -26,35 +26,20 @@ var HealthServicesPage = Page.extend({
 
   initialize: function () {
     var LocationsCollection = Backbone.Collection.extend({});
-    this.healthServices = new LocationsCollection();
+    this.healthCentreLocations = new LocationsCollection();
+
     var healthCentres = [{
-      serviceName: 'National Services',
-      contactNum: '0488888888',
-      kmDist: '10km'
-    },
-    {
-      serviceName: 'Help Me',
-      contactNum: '0477777777',
-      kmDist: '11km'
-    },
-    {
-      serviceName: 'Echo Services',
-      contactNum: '0499999999',
-      kmDist: '12km'
-    }
-  ];
-    this.healthServices.push(healthCentres);
+      serviceName: 'Name A',
+      contactNum: '111',
+      kmDist: '1'
+    }];
+
+    this.healthCentreLocations.reset(healthCentres);
   },
 
   render: function() {
-
-    this.healthServices.each(function () {
-      // pass model.attributes to template
-    });
-
-    this.$el.html(this.template({healthServices: healthServices}));
+    this.$el.html(this.template({healthServices: this.healthCentreLocations.toJSON()}));
     return this;
-
   }
 
 });
