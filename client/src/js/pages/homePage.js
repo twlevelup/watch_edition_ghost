@@ -16,7 +16,7 @@ var homeScreen = PageView.extend({
   },
 
   goToContacts: function() {
-    global.App.navigate('contacts');
+    global.App.navigate('healthServices');
   },
 
   goToEmergency: function() {

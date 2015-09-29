@@ -29,11 +29,11 @@ describe('healthServices', function() {
 
     });
 
-    describe('top', function() {
+    describe('face', function() {
 
       it('should take you to the home page', function() {
         spyOn(global.App, 'navigate');
-        healthServicesPage.trigger('top');
+        healthServicesPage.trigger('face');
         expect(global.App.navigate).toHaveBeenCalledWith('');
       });
 

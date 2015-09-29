@@ -11,9 +11,9 @@ var HealthServicesPage = Page.extend({
   buttonEvents: {
     right: '',
     left: 'goBack',
-    top: 'returnHome',
+    top: '',
     bottom: '',
-    face: ''
+    face: 'returnHome'
   },
 
   returnHome: function() {
