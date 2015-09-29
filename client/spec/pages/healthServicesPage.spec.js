@@ -14,8 +14,8 @@ describe('healthServices', function() {
     healthServicesPage = new HealthServicesPage();
   });
 
-  describe('initialize', function(){
-    it('should create a collection', function(){
+  describe('initialize', function() {
+    it('should create a collection', function() {
       expect(healthServicesPage.healthCentreLocations).toBeTruthy();
     });
   });
@@ -51,7 +51,7 @@ describe('healthServices', function() {
 
     var healthCentres;
 
-    it('should render each of the locations', function(){
+    it('should render each of the locations', function() {
 
       healthCentres = [{
         serviceName: 'Name A',

@@ -24,7 +24,7 @@ var HealthServicesPage = Page.extend({
     this.back();
   },
 
-  initialize: function () {
+  initialize: function() {
     var LocationsCollection = Backbone.Collection.extend({});
     this.healthCentreLocations = new LocationsCollection();
 
