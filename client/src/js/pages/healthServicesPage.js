@@ -10,34 +10,36 @@ var HealthServicesPage = Page.extend({
 
   buttonEvents: {
     right: '',
-    left: '',
+    left: 'goBack',
     top: '',
     bottom: '',
-    face: ''
+    face: 'returnHome'
+  },
+
+  returnHome: function() {
+    global.App.navigate('');
+  },
+
+  goBack: function() {
+    this.back();
+  },
+
+  initialize: function() {
+    var LocationsCollection = Backbone.Collection.extend({});
+    this.healthCentreLocations = new LocationsCollection();
+
+    var healthCentres = [{
+      serviceName: 'Name A',
+      contactNum: '111',
+      kmDist: '1'
+    }];
+
+    this.healthCentreLocations.reset(healthCentres);
   },
 
   render: function() {
-
-    var healthServices = [{
-      serviceName: 'National Services',
-      contactNum: '0488888888',
-      kmDist: '10km'
-    },
-    {
-      serviceName: 'Echo Services',
-      contactNum: '0499999999',
-      kmDist: '12km'
-    },
-    {
-      serviceName: 'Help Me',
-      contactNum: '0477777777',
-      kmDist: '11km'
-    }
-  ];
-
-    this.$el.html(this.template({healthServices: healthServices}));
+    this.$el.html(this.template({healthServices: this.healthCentreLocations.toJSON()}));
     return this;
-
   }
 
 });
