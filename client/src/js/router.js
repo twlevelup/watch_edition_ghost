@@ -12,8 +12,6 @@ var Router = require('./framework/router.js'),
   sunPage = new SunPage(),
   ghostPage = new GhostPage(),
   healthServicesPage = new HealthServicesPage();
-  ghostPage = new GhostPage();
-
 
 var AppRouter = Router.extend({
 
