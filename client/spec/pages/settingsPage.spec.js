@@ -24,6 +24,17 @@ describe('Settings', function() {
   });
 
   describe('buttons', function() {
+    describe('face', function() {
+      it('should go to home page', function() {
+        spyOn(global.App, 'navigate');
+        settingsPage.render();
+        settingsPage.setButtonEvents();
+        settingsPage.trigger('face');
+
+        expect(global.App.navigate).toHaveBeenCalledWith('');
+      });
+    });
+
     describe('right', function() {
       it('should go to the selected page', function() {
         spyOn(global.App, 'navigate');

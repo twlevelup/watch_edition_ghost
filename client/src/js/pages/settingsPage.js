@@ -13,7 +13,7 @@ var SettingsPage = Page.extend({
     left: 'goToHomePage',
     top: 'moveUp',
     bottom: 'moveDown',
-    face: ''
+    face: 'goToHomePage'
   },
 
   goToSelectedUrl: function() {
