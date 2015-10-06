@@ -6,7 +6,8 @@ var AppRouter = require('../src/js/router.js'),
   ContactPage = require('../src/js/pages/contactsPage'),
   SunPage = require('../src/js/pages/sunPage'),
   GhostPage = require('../src/js/pages/ghostPage'),
-  HealthServicesPage = require('../src/js/pages/healthServicesPage');
+  HealthServicesPage = require('../src/js/pages/healthServicesPage'),
+  SettingsPage = require('../src/js/pages/settingsPage');
 
 describe('Application Router', function() {
 
@@ -24,6 +25,14 @@ describe('Application Router', function() {
         router.home();
         var isHomePage = router.renderView.calls.argsFor(0)[0] instanceof HomePage;
         expect(isHomePage).toBeTruthy();
+      });
+    });
+
+    describe('#settings', function(){
+      it('should load the settings screen', function(){
+        router.settings();
+        var isSettingsPage = router.renderView.calls.argsFor(0)[0] instanceof SettingsPage;
+        expect(isSettingsPage).toBeTruthy();
       });
     });
 
@@ -49,13 +58,13 @@ describe('Application Router', function() {
       var isGhostPage = router.renderView.calls.argsFor(0)[0] instanceof GhostPage;
       expect(isGhostPage).toBeTruthy();
     });
+  });
 
-    describe('#healthServices', function() {
-      it('should load the Health Services screen', function() {
-        router.healthServices();
-        var isHealthServicesPage = router.renderView.calls.argsFor(0)[0] instanceof HealthServicesPage;
-        expect(isHealthServicesPage).toBeTruthy();
-      });
+  describe('#healthServices', function() {
+    it('should load the Health Services screen', function() {
+      router.healthServices();
+      var isHealthServicesPage = router.renderView.calls.argsFor(0)[0] instanceof HealthServicesPage;
+      expect(isHealthServicesPage).toBeTruthy();
     });
   });
 
