@@ -29,9 +29,19 @@ var HealthServicesPage = Page.extend({
     this.healthCentreLocations = new LocationsCollection();
 
     var healthCentres = [{
-      serviceName: 'Name A',
-      contactNum: '111',
-      kmDist: '1'
+      serviceName: 'Health Service A',
+      contactNum: '0411111111',
+      kmDist: '4km'
+    },
+    {
+      serviceName: 'Health Service B',
+      contactNum: '0422222222',
+      kmDist: '6km'
+    },
+    {
+      serviceName: 'Health Service C',
+      contactNum: '0433333333',
+      kmDist: '8km'
     }];
 
     this.healthCentreLocations.reset(healthCentres);

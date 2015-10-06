@@ -54,26 +54,26 @@ describe('healthServices', function() {
     it('should render each of the locations', function() {
 
       healthCentres = [{
-        serviceName: 'Name A',
-        contactNum: '111',
-        kmDist: '1'
-      }/*,
-      {
-        serviceName: 'Name B',
-        contactNum: '222',
-        kmDist: '2'
-      },
-      {
-        serviceName: 'Name C',
-        contactNum: '333',
-        kmDist: '3'
-      */];
+      serviceName: 'Health Service A',
+      contactNum: '0411111111',
+      kmDist: '4km'
+    },
+    {
+      serviceName: 'Health Service B',
+      contactNum: '0422222222',
+      kmDist: '6km'
+    },
+    {
+      serviceName: 'Health Service C',
+      contactNum: '0433333333',
+      kmDist: '8km'
+    }];
 
       var html = healthServicesPage.$el.html();
       healthServicesPage.healthCentreLocations.reset(healthCentres);
       healthServicesPage.render();
-      expect(healthServicesPage.$el).toContainHtml('Name A -- 1');
-      expect(healthServicesPage.$el).toContainHtml('111');
+      expect(healthServicesPage.$el).toContainHtml('Health Service A -- 4km');
+      expect(healthServicesPage.$el).toContainHtml('0411111111');
     });
 
     it('returns the view object', function() {
