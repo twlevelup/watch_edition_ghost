@@ -53,5 +53,14 @@ describe('Settings', function() {
         expect(settingsPage.$el.find('#settings-list > ul > li.active').data('index')).toEqual(4);
       });
     });
+
+    describe('left', function() {
+      it('should select and go to the home page', function() {
+        spyOn(global.App, 'navigate');
+        settingsPage.setButtonEvents();
+        settingsPage.trigger('left');
+        expect(global.App.navigate).toHaveBeenCalledWith('');
+      });
+    });
   });
 });

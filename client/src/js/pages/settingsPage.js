@@ -10,10 +10,14 @@ var SettingsPage = Page.extend({
 
   buttonEvents: {
     right: '',
-    left: '',
+    left: 'goToHomePage',
     top: 'moveUp',
     bottom: 'moveDown',
     face: ''
+  },
+
+  goToHomePage: function() {
+    global.App.navigate('');
   },
 
   moveUp: function() {
