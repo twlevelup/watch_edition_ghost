@@ -13,7 +13,7 @@ var EmergencyContactPage = Page.extend({
     left: 'goToSettingsPage',
     top: '',
     bottom: '',
-    face: 'goToHomePage'
+    face: 'moveToRight'
   },
 
   goToHomePage: function() {
@@ -24,6 +24,12 @@ var EmergencyContactPage = Page.extend({
     global.App.navigate('settings');
   },
 
+  moveToRight: function() {
+    var currentIndex = this.$el.find(".active").removeClass("active").data("index");
+    // loop back
+    var newIndex = (currentIndex + 1) % 10;
+    this.$el.find('input[data-index="' + newIndex + '"]').addClass('active');
+  },
   //
   // moveUp: function() {
   //   var oldActive = this.$el.find('li.active').removeClass('active');

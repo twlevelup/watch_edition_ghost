@@ -18,10 +18,11 @@ describe('The Emergency Contact Settings Page', function() {
 
     beforeEach(function() {
       ecPage.setButtonEvents();
+      ecPage.render();
     });
 
     describe('left', function() {
-      it('should take the user to the previous (settings) page', function() {
+      it('should go back to settings page', function() {
         spyOn(global.App, 'navigate');
         ecPage.trigger('left');
         expect(global.App.navigate).toHaveBeenCalledWith('settings');
@@ -29,10 +30,18 @@ describe('The Emergency Contact Settings Page', function() {
     });
 
     describe('face', function() {
-      it('should take the user to the home page', function() {
-        spyOn(global.App, 'navigate');
+      it('should select the next input if the index is not 9', function() {
+        ecPage.$el.find(".active").removeClass("active");
+        ecPage.$el.find("input[data-index='0']").addClass("active");
         ecPage.trigger('face');
-        expect(global.App.navigate).toHaveBeenCalledWith('');
+        expect(ecPage.$el.find(".active").data("index")).toEqual(1);
+      });
+
+      it('should select index 0 if the index is 9', function() {
+        ecPage.$el.find(".active").removeClass("active");
+        ecPage.$el.find("input[data-index='9']").addClass("active");
+        ecPage.trigger('face');
+        expect(ecPage.$el.find(".active").data("index")).toEqual(0);
       });
     });
   });
