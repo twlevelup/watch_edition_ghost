@@ -25,26 +25,17 @@ var ListPage = Page.extend({
 
   moveUp: function() {
     var oldActive = this.$el.find('li.active').removeClass('active');
-    var currIndex = oldActive.data('index');
-    var newIndex  = 0;
-    if (currIndex === 0) {
-      newIndex = 4;
-    } else {
-      newIndex = currIndex - 1;
-    }
+    // +5 is becase we're decrementing.
+    // incase we get index -1 == -1, then it should loop back
+    // to 4
+    var newIndex = (oldActive.data('index') - 1 + 5) % 5;
 
     this.$el.find('li[data-index="' + newIndex + '"]').addClass('active');
   },
 
   moveDown: function() {
     var oldActive = this.$el.find('li.active').removeClass('active');
-    var currIndex = oldActive.data('index');
-    var newIndex  = 0;
-    if (currIndex === 4) {
-      newIndex = 0;
-    } else {
-      newIndex = currIndex + 1;
-    }
+    var newIndex = (oldActive.data('index') + 1) % 5;
 
     this.$el.find('li[data-index="' + newIndex + '"]').addClass('active');
   },
