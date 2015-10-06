@@ -24,6 +24,18 @@ describe('Settings', function() {
   });
 
   describe('buttons', function() {
+    describe('right', function() {
+      it('should go to the selected page', function() {
+        spyOn(global.App, 'navigate');
+        settingsPage.render();
+        var url = settingsPage.$el.find('li.active').data('url');
+        settingsPage.setButtonEvents();
+        settingsPage.trigger('right');
+
+        expect(global.App.navigate).toHaveBeenCalledWith(url);
+      });
+    });
+
     describe('top', function() {
       it('should move the cursor up by 1 cell', function() {
         spyOn(global.App, 'navigate');

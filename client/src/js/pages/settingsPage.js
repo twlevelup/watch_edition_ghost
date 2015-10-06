@@ -9,11 +9,16 @@ var SettingsPage = Page.extend({
   template: require('../../templates/pages/settings.hbs'),
 
   buttonEvents: {
-    right: '',
+    right: 'goToSelectedUrl',
     left: 'goToHomePage',
     top: 'moveUp',
     bottom: 'moveDown',
     face: ''
+  },
+
+  goToSelectedUrl: function() {
+    var url = this.$el.find('li.active').data('url');
+    global.App.navigate(url);
   },
 
   goToHomePage: function() {
