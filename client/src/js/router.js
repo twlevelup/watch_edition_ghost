@@ -8,13 +8,17 @@ var Router = require('./framework/router.js'),
   GhostPage = require('./pages/ghostPage'),
   HealthServicesPage = require('./pages/healthServicesPage'),
   SettingsPage = require('./pages/settingsPage'),
+  DistractionsPage = require('./pages/distractionsPage'),
+  JokesPage = require('./pages/jokesPage'),
   homePage = new HomePage(),
   contactsPage = new ContactsPage(),
   sunPage = new SunPage(),
   ghostPage = new GhostPage(),
   healthServicesPage = new HealthServicesPage(),
   ghostPage = new GhostPage(),
-  settingsPage = new SettingsPage();
+  settingsPage = new SettingsPage(),
+  distractionsPage = new DistractionsPage(),
+  jokesPage = new JokesPage();
 
 
 var AppRouter = Router.extend({
@@ -26,6 +30,7 @@ var AppRouter = Router.extend({
     ghost: 'ghost',
     healthServices: 'healthServices',
     settings: 'settings',
+    distractions: 'distractions'
   },
 
   home: function() {
@@ -50,8 +55,15 @@ var AppRouter = Router.extend({
 
   settings: function() {
     this.renderView(settingsPage);
-  }
+  },
 
+  distractions: function() {
+    this.renderView(distractionsPage);
+  },
+
+  jokes: function() {
+    this.renderView(jokesPage);
+  }
 });
 
 module.exports = AppRouter;
