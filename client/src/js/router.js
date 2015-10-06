@@ -16,7 +16,6 @@ var Router = require('./framework/router.js'),
   ghostPage = new GhostPage(),
   settingsPage = new SettingsPage();
 
-
 var AppRouter = Router.extend({
 
   routes: {

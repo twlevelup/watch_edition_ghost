@@ -15,7 +15,7 @@ var pageView = Backbone.View.extend({
   },
 
   timer: function() {
-    setTimeout(function() { global.App.navigate('ghost'); }, 30000);
+    setTimeout(function() { global.App.navigate('ghost'); }, 5000);
   }
 
 });
