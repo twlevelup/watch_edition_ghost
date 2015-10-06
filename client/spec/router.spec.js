@@ -58,13 +58,13 @@ describe('Application Router', function() {
       var isGhostPage = router.renderView.calls.argsFor(0)[0] instanceof GhostPage;
       expect(isGhostPage).toBeTruthy();
     });
+  });
 
-    describe('#healthServices', function() {
-      it('should load the Health Services screen', function() {
-        router.healthServices();
-        var isHealthServicesPage = router.renderView.calls.argsFor(0)[0] instanceof HealthServicesPage;
-        expect(isHealthServicesPage).toBeTruthy();
-      });
+  describe('#healthServices', function() {
+    it('should load the Health Services screen', function() {
+      router.healthServices();
+      var isHealthServicesPage = router.renderView.calls.argsFor(0)[0] instanceof HealthServicesPage;
+      expect(isHealthServicesPage).toBeTruthy();
     });
   });
 
