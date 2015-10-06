@@ -12,7 +12,7 @@ var SettingsPage = Page.extend({
     right: '',
     left: '',
     top: 'moveUp',
-    bottom: '',
+    bottom: 'moveDown',
     face: ''
   },
 
@@ -24,6 +24,19 @@ var SettingsPage = Page.extend({
       newIndex = 4;
     } else {
       newIndex = currIndex - 1;
+    }
+
+    this.$el.find('li[data-index="' + newIndex + '"]').addClass('active');
+  },
+
+  moveDown: function() {
+    var oldActive = this.$el.find('li.active').removeClass('active');
+    var currIndex = oldActive.data('index');
+    var newIndex  = 0;
+    if (currIndex === 4) {
+      newIndex = 0;
+    } else {
+      newIndex = currIndex + 1;
     }
 
     this.$el.find('li[data-index="' + newIndex + '"]').addClass('active');
