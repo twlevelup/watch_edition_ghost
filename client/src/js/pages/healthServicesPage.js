@@ -9,10 +9,10 @@ var HealthServicesPage = Page.extend({
   template: require('../../templates/pages/healthServicesPage.hbs'),
 
   buttonEvents: {
-    right: '',
+    right: 'returnHome',
     left: 'goBack',
-    top: '',
-    bottom: '',
+    top: 'returnHome',
+    bottom: 'returnHome',
     face: 'returnHome'
   },
 

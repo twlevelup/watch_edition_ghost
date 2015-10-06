@@ -45,6 +45,36 @@ describe('healthServices', function() {
 
     });
 
+    describe('top', function() {
+
+      it('should take you to the home page', function() {
+        spyOn(global.App, 'navigate');
+        healthServicesPage.trigger('top');
+        expect(global.App.navigate).toHaveBeenCalledWith('');
+      });
+
+    });
+
+    describe('bottom', function() {
+
+      it('should take you to the home page', function() {
+        spyOn(global.App, 'navigate');
+        healthServicesPage.trigger('bottom');
+        expect(global.App.navigate).toHaveBeenCalledWith('');
+      });
+
+    });
+
+    describe('right', function() {
+
+      it('should take you to the home page', function() {
+        spyOn(global.App, 'navigate');
+        healthServicesPage.trigger('right');
+        expect(global.App.navigate).toHaveBeenCalledWith('');
+      });
+
+    });
+
   });
 
   describe('rendering', function() {
