@@ -25,11 +25,13 @@ var EmergencyContactPage = Page.extend({
   },
 
   moveToRight: function() {
-    var currentIndex = this.$el.find(".active").removeClass("active").data("index");
+    var currentIndex = this.$el.find('.active').removeClass('active').data('index');
+
     // loop back
     var newIndex = (currentIndex + 1) % 10;
     this.$el.find('input[data-index="' + newIndex + '"]').addClass('active');
   },
+
   //
   // moveUp: function() {
   //   var oldActive = this.$el.find('li.active').removeClass('active');
