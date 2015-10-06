@@ -23,6 +23,7 @@ var EmergencyContactPage = Page.extend({
   goToSettingsPage: function() {
     global.App.navigate('settings');
   },
+
   //
   // moveUp: function() {
   //   var oldActive = this.$el.find('li.active').removeClass('active');
