@@ -20,7 +20,6 @@ var Router = require('./framework/router.js'),
   distractionsPage = new DistractionsPage(),
   jokesPage = new JokesPage();
 
-
 var AppRouter = Router.extend({
 
   routes: {
