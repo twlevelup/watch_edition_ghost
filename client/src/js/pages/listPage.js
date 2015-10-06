@@ -25,6 +25,7 @@ var ListPage = Page.extend({
 
   moveUp: function() {
     var oldActive = this.$el.find('li.active').removeClass('active');
+
     // +5 is becase we're decrementing.
     // incase we get index -1 == -1, then it should loop back
     // to 4
