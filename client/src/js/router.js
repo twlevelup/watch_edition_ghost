@@ -57,7 +57,9 @@ var AppRouter = Router.extend({
   },
 
   distractions: function() {
-    this.renderView(distractionsPage);
+    // this.renderView(distractionsPage);
+    // TODO: For now
+    this.renderView(jokesPage);
   },
 
   jokes: function() {

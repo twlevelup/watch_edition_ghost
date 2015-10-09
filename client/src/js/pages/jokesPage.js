@@ -45,14 +45,14 @@ var JokesPage = Page.extend({
   id: 'jokes-page',
 
   state: {
-    jokeIndex: 0,
+    jokeIndex: 0
   },
 
   template: require('../../templates/pages/jokesPage.hbs'),
 
   buttonEvents: {
     right: '',
-    left: 'goToDistractionsPage',
+    left: 'goToHome',
     top: 'nextJoke',
     bottom: 'prevJoke',
     face: ''
@@ -61,14 +61,14 @@ var JokesPage = Page.extend({
   render: function() {
     this.$el.html(this.template({
       joke: JOKES[this.state.jokeIndex],
-      index: this.state.jokeIndex,
+      index: this.state.jokeIndex
     }));
 
     return this;
   },
 
-  goToDistractionsPage: function() {
-    global.App.navigate('distractions');
+  goToHome: function() {
+    global.App.navigate('');
   },
 
   nextJoke: function() {
@@ -80,7 +80,7 @@ var JokesPage = Page.extend({
 
     this.$el.html(this.template({
       joke: JOKES[this.state.jokeIndex],
-      index: this.state.jokeIndex,
+      index: this.state.jokeIndex
     }));
     return this;
   },
@@ -94,7 +94,7 @@ var JokesPage = Page.extend({
 
     this.$el.html(this.template({
       joke: JOKES[this.state.jokeIndex],
-      index: this.state.jokeIndex,
+      index: this.state.jokeIndex
     }));
     return this;
   }

@@ -24,7 +24,7 @@ describe('jokes', function() {
       it('routes to the distractions page', function() {
         spyOn(global.App, 'navigate');
         jokesPage.trigger('left');
-        expect(global.App.navigate).toHaveBeenCalledWith('distractions');
+        expect(global.App.navigate).toHaveBeenCalledWith('');
       });
     });
 
