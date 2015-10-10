@@ -15,7 +15,7 @@ describe('List', function() {
     listPage.setButtonEvents();
   });
 
-  describe('render', function(){
+  describe('render', function() {
     it('returns the view object', function() {
       expect(listPage.render()).toEqual(listPage);
     });

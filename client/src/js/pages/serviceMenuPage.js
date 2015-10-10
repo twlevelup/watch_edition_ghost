@@ -4,7 +4,7 @@ var ListPage = require('./listPage');
 
 var ServiceMenuPage = ListPage.extend({
 
-  id: 'settings',
+  id: 'serviceMenu-page',
 
   template: require('../../templates/pages/serviceMenu.hbs')
 

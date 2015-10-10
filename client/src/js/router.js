@@ -11,6 +11,7 @@ var Router = require('./framework/router.js'),
   ServiceMenuPage = require('./pages/serviceMenuPage'),
   DistractionsPage = require('./pages/distractionsPage'),
   JokesPage = require('./pages/jokesPage'),
+  SupportGroupPage = require('./pages/supportgroupPage'),
   homePage = new HomePage(),
   contactsPage = new ContactsPage(),
   sunPage = new SunPage(),
@@ -20,6 +21,7 @@ var Router = require('./framework/router.js'),
   settingsPage = new SettingsPage(),
   serviceMenuPage = new ServiceMenuPage(),
   distractionsPage = new DistractionsPage(),
+  supportGroupPage = new SupportGroupPage(),
   jokesPage = new JokesPage();
 
 var AppRouter = Router.extend({
@@ -33,7 +35,8 @@ var AppRouter = Router.extend({
     settings: 'settings',
     servicesMenu: 'servicesMenu',
     distractions: 'distractions',
-    jokes: 'jokes'
+    jokes: 'jokes',
+    supportGroups: 'supportGroup'
   },
 
   home: function() {
@@ -72,6 +75,9 @@ var AppRouter = Router.extend({
 
   jokes: function() {
     this.renderView(jokesPage);
+  },
+  supportGroup: function(){
+    this.renderView(supportGroupPage);
   }
 });
 

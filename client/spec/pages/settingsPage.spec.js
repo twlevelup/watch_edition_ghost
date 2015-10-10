@@ -24,7 +24,7 @@ describe('Settings', function() {
 
   });
 
-  describe('render', function(){
+  describe('render', function() {
     it('returns the view object', function() {
       expect(settingsPage.render()).toEqual(settingsPage);
     });
