@@ -21,9 +21,11 @@ describe('distractions', function() {
     });
 
     describe('left', function() {
-
-      xit('should have tests');
-
+      it('should select and go to the home page', function() {
+        spyOn(global.App, 'navigate');
+        distractionsPage.trigger('left');
+        expect(global.App.navigate).toHaveBeenCalledWith('');
+      });
     });
 
     describe('right', function() {

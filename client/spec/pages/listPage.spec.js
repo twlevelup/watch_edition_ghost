@@ -15,6 +15,12 @@ describe('List', function() {
     listPage.setButtonEvents();
   });
 
+  describe('render', function(){
+    it('returns the view object', function() {
+      expect(listPage.render()).toEqual(listPage);
+    });
+  });
+
   describe('buttons', function() {
     describe('right', function() {
       it('should go to the selected page', function() {
