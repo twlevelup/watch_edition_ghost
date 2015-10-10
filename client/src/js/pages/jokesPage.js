@@ -45,7 +45,8 @@ var JokesPage = Page.extend({
   id: 'jokes-page',
 
   state: {
-    jokeIndex: 0
+    jokeIndex: 0,
+    currentJokeList: []
   },
 
   template: require('../../templates/pages/jokesPage.hbs'),
@@ -54,13 +55,16 @@ var JokesPage = Page.extend({
     right: '',
     left: 'goToHome',
     top: 'nextJoke',
-    bottom: 'prevJoke',
+    bottom: 'nextJoke',
     face: ''
   },
 
   render: function() {
+    this.state.currentJokeList = _.shuffle(JOKES);
+    this.state.jokeIndex = 0;
+
     this.$el.html(this.template({
-      joke: JOKES[this.state.jokeIndex],
+      joke: this.state.currentJokeList[this.state.jokeIndex],
       index: this.state.jokeIndex
     }));
 
@@ -75,11 +79,12 @@ var JokesPage = Page.extend({
     this.state.jokeIndex += 1;
 
     if (this.state.jokeIndex >= JOKES.length) {
+      this.state.currentJokeList = _.shuffle(JOKES);
       this.state.jokeIndex = 0;
     }
 
     this.$el.html(this.template({
-      joke: JOKES[this.state.jokeIndex],
+      joke: this.state.currentJokeList[this.state.jokeIndex],
       index: this.state.jokeIndex
     }));
     return this;
@@ -89,11 +94,12 @@ var JokesPage = Page.extend({
     this.state.jokeIndex -= 1;
 
     if (this.state.jokeIndex < 0) {
+      this.state.currentJokeList = _.shuffle(JOKES);
       this.state.jokeIndex = JOKES.length - 1;
     }
 
     this.$el.html(this.template({
-      joke: JOKES[this.state.jokeIndex],
+      joke: this.state.currentJokeList[this.state.jokeIndex],
       index: this.state.jokeIndex
     }));
     return this;

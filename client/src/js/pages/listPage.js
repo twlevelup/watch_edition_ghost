@@ -34,6 +34,7 @@ var ListPage = Page.extend({
     } else {
       newIndex = currIndex - 1;
     }
+
     this.$el.find('li[data-index="' + newIndex + '"]').addClass('active');
   },
 
@@ -46,6 +47,7 @@ var ListPage = Page.extend({
     } else {
       newIndex = currIndex + 1;
     }
+
     this.$el.find('li[data-index="' + newIndex + '"]').addClass('active');
   },
 

@@ -18,7 +18,7 @@ var Router = require('./framework/router.js'),
   healthServicesPage = new HealthServicesPage(),
   ghostPage = new GhostPage(),
   settingsPage = new SettingsPage(),
-  serviceMenuPage = new ServiceMenuPage();
+  serviceMenuPage = new ServiceMenuPage(),
   distractionsPage = new DistractionsPage(),
   jokesPage = new JokesPage();
 
@@ -31,11 +31,8 @@ var AppRouter = Router.extend({
     ghost: 'ghost',
     healthServices: 'healthServices',
     settings: 'settings',
-<<<<<<< HEAD
-    servicesMenu: 'servicesMenu'
-=======
+    servicesMenu: 'servicesMenu',
     distractions: 'distractions'
->>>>>>> 11e94a245ec8c141613d8acb4a1723b7a0daca99
   },
 
   home: function() {
@@ -61,13 +58,10 @@ var AppRouter = Router.extend({
   settings: function() {
     this.renderView(settingsPage);
   },
-<<<<<<< HEAD
 
   servicesMenu: function () {
     this.renderView(serviceMenuPage);
-  }
-=======
->>>>>>> 11e94a245ec8c141613d8acb4a1723b7a0daca99
+  },
 
   distractions: function() {
     // this.renderView(distractionsPage);

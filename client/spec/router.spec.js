@@ -7,6 +7,8 @@ var AppRouter = require('../src/js/router.js'),
   SunPage = require('../src/js/pages/sunPage'),
   GhostPage = require('../src/js/pages/ghostPage'),
   HealthServicesPage = require('../src/js/pages/healthServicesPage'),
+  DistractionsPage = require('../src/js/pages/distractionsPage'),
+  JokesPage = require('../src/js/pages/jokesPage'),
   SettingsPage = require('../src/js/pages/settingsPage');
 
 describe('Application Router', function() {
@@ -68,6 +70,21 @@ describe('Application Router', function() {
     });
   });
 
+  describe('#distractions', function() {
+    it('should load the distractions screen', function() {
+      router.DistractionsPage();
+      var isDistractionsPage = router.renderView.calls.argsFor(0)[0] instanceof DistractionsPage;
+      expect(isDistractionsPage).toBeTruthy();
+    });
+  });
+
+  describe('#jokes', function() {
+    it('should load the distractions screen', function() {
+      router.JokesPage();
+      var isJokesPage = router.renderView.calls.argsFor(0)[0] instanceof JokesPage;
+      expect(isJokesPage).toBeTruthy();
+    });
+  });
 });
 
 
