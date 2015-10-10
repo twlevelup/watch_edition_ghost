@@ -15,9 +15,21 @@ var pageView = Backbone.View.extend({
   },
 
   timer: function() {
-    setTimeout(function() { global.App.navigate('ghost'); }, 5000);
-  }
+    var time = 0;
+    var ghostIsVisible = false;
+    $('#watch').on('click', function() {
+      time = 0;
+      ghostIsVisible = false;
+    });
 
+    setInterval(function() {
+      time += 1;
+      if ((!ghostIsVisible) && (time >= 5)) {
+        global.App.navigate('ghost');
+        ghostIsVisible = true;
+      }
+    }, 1000);
+  }
 });
 
 module.exports = pageView;
