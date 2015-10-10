@@ -29,7 +29,11 @@ describe('jokes', function() {
     });
 
     describe('right', function() {
-      xit('should have tests');
+      it('should not move to other pages', function() {
+        spyOn(global.App, 'navigate');
+        jokesPage.trigger('right');
+        expect(global.App.navigate).not.toHaveBeenCalled();
+      });
     });
 
     describe('top', function() {
@@ -59,7 +63,11 @@ describe('jokes', function() {
     });
 
     describe('face', function() {
-      xit('should have tests');
+      it('should not move to other pages', function() {
+        spyOn(global.App, 'navigate');
+        jokesPage.trigger('face');
+        expect(global.App.navigate).not.toHaveBeenCalled();
+      });
     });
 
   });
