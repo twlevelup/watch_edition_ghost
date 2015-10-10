@@ -22,7 +22,7 @@ var pageView = Backbone.View.extend({
 
     setInterval(function() {
       time += 1;
-      if (time >= 5) {
+      if (time >= 20) {
         global.App.navigate('ghost');
       }
     }, 1000);
