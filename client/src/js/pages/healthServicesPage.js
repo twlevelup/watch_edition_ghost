@@ -29,19 +29,19 @@ var HealthServicesPage = Page.extend({
     this.healthCentreLocations = new LocationsCollection();
 
     var healthCentres = [{
-      serviceName: 'Health Service A',
-      contactNum: '0411111111',
-      kmDist: '4km'
+      serviceName: 'Sydney Hospital',
+      contactNum: '(02) 9382 7111',
+      kmDist: '1.1km'
     },
     {
-      serviceName: 'Health Service B',
-      contactNum: '0422222222',
-      kmDist: '6km'
+      serviceName: 'Quay Health',
+      contactNum: '(02) 9251 3411',
+      kmDist: '2.3km'
     },
     {
-      serviceName: 'Health Service C',
-      contactNum: '0433333333',
-      kmDist: '8km'
+      serviceName: 'O\'Connell Street Medical Centre',
+      contactNum: '(02) 9241 1577',
+      kmDist: '3.2km'
     }];
 
     this.healthCentreLocations.reset(healthCentres);

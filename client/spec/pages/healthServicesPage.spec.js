@@ -102,7 +102,7 @@ describe('healthServices', function() {
       var html = healthServicesPage.$el.html();
       healthServicesPage.healthCentreLocations.reset(healthCentres);
       healthServicesPage.render();
-      expect(healthServicesPage.$el).toContainHtml('Health Service A -- 4km');
+      expect(healthServicesPage.$el).toContainHtml('Health Service A - 4km');
       expect(healthServicesPage.$el).toContainHtml('0411111111');
     });
 
