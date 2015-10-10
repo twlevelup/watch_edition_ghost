@@ -21,11 +21,11 @@ describe('The Home Page', function() {
 
     describe('right', function() {
 
-      it('should take the user to the health services page', function() {
+      it('should take the user to the services menu page', function() {
         spyOn(global.App, 'navigate');
         homePage.setButtonEvents();
         homePage.trigger('right');
-        expect(global.App.navigate).toHaveBeenCalledWith('healthServices');
+        expect(global.App.navigate).toHaveBeenCalledWith('servicesMenu');
       });
     });
 
@@ -62,7 +62,9 @@ describe('The Home Page', function() {
         spyOn(global.App, 'navigate');
         homePage.setButtonEvents();
         homePage.trigger('left');
-        expect(global.App.navigate).toHaveBeenCalledWith('distractions');
+
+        // Goes to jokes until multiple distractions
+        expect(global.App.navigate).toHaveBeenCalledWith('jokes');
       });
     });
   });

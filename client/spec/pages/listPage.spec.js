@@ -15,6 +15,12 @@ describe('List', function() {
     listPage.setButtonEvents();
   });
 
+  describe('render', function() {
+    it('returns the view object', function() {
+      expect(listPage.render()).toEqual(listPage);
+    });
+  });
+
   describe('buttons', function() {
     describe('right', function() {
       it('should go to the selected page', function() {
@@ -42,16 +48,16 @@ describe('List', function() {
     });
 
     describe('bottom', function() {
-      it('should move the cursor down by 1 cell', function() {
+      it('should move the cursor down by 1 cell and wrap around to the top of the list if at the bottom of the list', function() {
         spyOn(global.App, 'navigate');
         listPage.render();
         var initIndex = listPage.$el.find('li.active').data('index');
         listPage.trigger('bottom');
 
         var newIndex = listPage.$el.find('li.active').data('index');
-        expect(newIndex).toEqual(4);
+        expect(newIndex).toEqual(0);
 
-        expect(listPage.$el.find('ul > li.active').data('index')).toEqual(4);
+        expect(listPage.$el.find('ul > li.active').data('index')).toEqual(0);
       });
     });
 

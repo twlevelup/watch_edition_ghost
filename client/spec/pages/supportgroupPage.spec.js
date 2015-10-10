@@ -1,36 +1,36 @@
 'use strict';
 
-var HealthServicesPage = require('../../src/js/pages/healthServicesPage'),
+var SupportgroupPage = require('../../src/js/pages/supportgroupPage.js'),
   Router = require('../../src/js/router'),
   App = require('../../src/js/app');
 
 global.App = App;
 
-describe('healthServices', function() {
+describe('supportGroup', function() {
 
-  var healthServicesPage;
+  var supportgroupPage;
 
   beforeEach(function() {
-    healthServicesPage = new HealthServicesPage();
+    supportgroupPage = new SupportgroupPage();
   });
 
   describe('initialize', function() {
     it('should create a collection', function() {
-      expect(healthServicesPage.healthCentreLocations).toBeTruthy();
+      expect(supportgroupPage.supportgroupLocations).toBeTruthy();
     });
   });
 
   describe('button event handlers', function() {
 
     beforeEach(function() {
-      healthServicesPage.setButtonEvents();
+      supportgroupPage.setButtonEvents();
     });
 
     describe('left', function() {
       it('should take you back', function() {
-        spyOn(healthServicesPage, 'back');
-        healthServicesPage.trigger('left');
-        expect(healthServicesPage.back).toHaveBeenCalled();
+        spyOn(supportgroupPage, 'back');
+        supportgroupPage.trigger('left');
+        expect(supportgroupPage.back).toHaveBeenCalled();
       });
 
     });
@@ -39,7 +39,7 @@ describe('healthServices', function() {
 
       it('should take you to the home page', function() {
         spyOn(global.App, 'navigate');
-        healthServicesPage.trigger('face');
+        supportgroupPage.trigger('face');
         expect(global.App.navigate).toHaveBeenCalledWith('');
       });
 
@@ -49,7 +49,7 @@ describe('healthServices', function() {
 
       it('should take you to the home page', function() {
         spyOn(global.App, 'navigate');
-        healthServicesPage.trigger('top');
+        supportgroupPage.trigger('top');
         expect(global.App.navigate).toHaveBeenCalledWith('');
       });
 
@@ -59,7 +59,7 @@ describe('healthServices', function() {
 
       it('should take you to the home page', function() {
         spyOn(global.App, 'navigate');
-        healthServicesPage.trigger('bottom');
+        supportgroupPage.trigger('bottom');
         expect(global.App.navigate).toHaveBeenCalledWith('');
       });
 
@@ -69,7 +69,7 @@ describe('healthServices', function() {
 
       it('should take you to the home page', function() {
         spyOn(global.App, 'navigate');
-        healthServicesPage.trigger('right');
+        supportgroupPage.trigger('right');
         expect(global.App.navigate).toHaveBeenCalledWith('');
       });
 
@@ -84,30 +84,36 @@ describe('healthServices', function() {
     it('should render each of the locations', function() {
 
       healthCentres = [{
-      serviceName: 'Health Service A',
+      serviceName: 'Support Group A',
       contactNum: '0411111111',
       kmDist: '4km'
     },
     {
-      serviceName: 'Health Service B',
+      serviceName: 'Support Group B',
       contactNum: '0422222222',
       kmDist: '6km'
     },
     {
-      serviceName: 'Health Service C',
+      serviceName: 'Support Group C',
       contactNum: '0433333333',
       kmDist: '8km'
     }];
 
-      var html = healthServicesPage.$el.html();
-      healthServicesPage.healthCentreLocations.reset(healthCentres);
-      healthServicesPage.render();
-      expect(healthServicesPage.$el).toContainHtml('Health Service A - 4km');
-      expect(healthServicesPage.$el).toContainHtml('0411111111');
+      var html = supportgroupPage.$el.html();
+      supportgroupPage.supportgroupLocations.reset(healthCentres);
+      supportgroupPage.render();
+      expect(supportgroupPage.$el).toContainHtml('Support Group A - 4km');
+      expect(supportgroupPage.$el).toContainHtml('0411111111');
+    });
+
+    it('should produce the correct HTML', function() {
+      supportgroupPage.render();
+      var html = supportgroupPage.$el.html();
+      expect(html).toContainText('AA Adelaide St');
     });
 
     it('returns the view object', function() {
-      expect(healthServicesPage.render()).toEqual(healthServicesPage);
+      expect(supportgroupPage.render()).toEqual(supportgroupPage);
     });
 
   });

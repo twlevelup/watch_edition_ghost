@@ -4,6 +4,8 @@ var Page = require('../framework/page');
 
 var ListPage = Page.extend({
 
+  itemCount: 0,
+
   template: require('../../templates/pages/listPage.hbs'),
 
   buttonEvents: {
@@ -25,24 +27,33 @@ var ListPage = Page.extend({
 
   moveUp: function() {
     var oldActive = this.$el.find('li.active').removeClass('active');
-
-    // +5 is becase we're decrementing.
-    // incase we get index -1 == -1, then it should loop back
-    // to 4
-    var newIndex = (oldActive.data('index') - 1 + 5) % 5;
+    var currIndex = oldActive.data('index');
+    var newIndex  = 0;
+    if (currIndex === 0) {
+      newIndex = this.itemCount - 1;
+    } else {
+      newIndex = currIndex - 1;
+    }
 
     this.$el.find('li[data-index="' + newIndex + '"]').addClass('active');
   },
 
   moveDown: function() {
     var oldActive = this.$el.find('li.active').removeClass('active');
-    var newIndex = (oldActive.data('index') + 1) % 5;
+    var currIndex = oldActive.data('index');
+    var newIndex  = 0;
+    if (currIndex === this.itemCount - 1) {
+      newIndex = 0;
+    } else {
+      newIndex = currIndex + 1;
+    }
 
     this.$el.find('li[data-index="' + newIndex + '"]').addClass('active');
   },
 
   render: function() {
     this.$el.html(this.template({}));
+    this.itemCount = this.$el.find('li').length;
     return this;
   }
 

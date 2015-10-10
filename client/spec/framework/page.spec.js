@@ -53,7 +53,7 @@ describe('A generic page', function() {
 
   describe('navigation helpers', function() {
     describe('back', function() {
-      it('should go back in the browser history');
+      xit('should go back in the browser history');
     });
   });
 
