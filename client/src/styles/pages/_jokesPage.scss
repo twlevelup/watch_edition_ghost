@@ -1,7 +1,26 @@
 #jokes-page {
   background-color: #4CB3B5;
+  min-height: 240px;
 
   #joke {
+    color: black;
+    position: absolute;
+    padding-left: 16px;
+    padding-right: 16px;
+    top: 64px;
+  }
+
+  #up-arrow {
+    position: absolute;
+    top: 0px;
+    left: 105px;
+    color: black;
+  }
+
+  #down-arrow {
+    position: absolute;
+    bottom: -225px;
+    left: 105px;
     color: black;
   }
 }

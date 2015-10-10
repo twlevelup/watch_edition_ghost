@@ -66,12 +66,6 @@ describe('jokes', function() {
 
   describe('rendering', function() {
 
-    it('should produce the correct HTML', function() {
-      jokesPage.render();
-      var html = jokesPage.$el.html();
-      expect(html).toContainText('Jokes');
-    });
-
     it('returns the view object', function() {
       expect(jokesPage.render()).toEqual(jokesPage);
     });
