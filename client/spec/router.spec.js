@@ -72,7 +72,7 @@ describe('Application Router', function() {
 
   describe('#distractions', function() {
     it('should load the distractions screen', function() {
-      router.DistractionsPage();
+      router.distractions();
       var isDistractionsPage = router.renderView.calls.argsFor(0)[0] instanceof DistractionsPage;
       expect(isDistractionsPage).toBeTruthy();
     });
@@ -80,7 +80,7 @@ describe('Application Router', function() {
 
   describe('#jokes', function() {
     it('should load the distractions screen', function() {
-      router.JokesPage();
+      router.jokes();
       var isJokesPage = router.renderView.calls.argsFor(0)[0] instanceof JokesPage;
       expect(isJokesPage).toBeTruthy();
     });

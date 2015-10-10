@@ -32,7 +32,8 @@ var AppRouter = Router.extend({
     healthServices: 'healthServices',
     settings: 'settings',
     servicesMenu: 'servicesMenu',
-    distractions: 'distractions'
+    distractions: 'distractions',
+    jokes: 'jokes'
   },
 
   home: function() {
@@ -66,7 +67,7 @@ var AppRouter = Router.extend({
   distractions: function() {
     // this.renderView(distractionsPage);
     // TODO: For now
-    this.renderView(jokesPage);
+    this.renderView(distractionsPage);
   },
 
   jokes: function() {

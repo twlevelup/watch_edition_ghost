@@ -28,7 +28,8 @@ var homeScreen = PageView.extend({
   },
 
   gotToDistractions: function() {
-    global.App.navigate('distractions');
+    // Goes to jokes page until we have multiple distractions
+    global.App.navigate('jokes');
   },
 
   render: function() {

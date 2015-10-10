@@ -52,7 +52,8 @@ describe('The Home Page', function() {
         spyOn(global.App, 'navigate');
         homePage.setButtonEvents();
         homePage.trigger('left');
-        expect(global.App.navigate).toHaveBeenCalledWith('distractions');
+        // Goes to jokes until multiple distractions
+        expect(global.App.navigate).toHaveBeenCalledWith('jokes');
       });
     });
   });
