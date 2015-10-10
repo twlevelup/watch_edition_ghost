@@ -9,6 +9,8 @@ var Router = require('./framework/router.js'),
   HealthServicesPage = require('./pages/healthServicesPage'),
   SettingsPage = require('./pages/settingsPage'),
   ServiceMenuPage = require('./pages/serviceMenuPage'),
+  DistractionsPage = require('./pages/distractionsPage'),
+  JokesPage = require('./pages/jokesPage'),
   homePage = new HomePage(),
   contactsPage = new ContactsPage(),
   sunPage = new SunPage(),
@@ -17,6 +19,8 @@ var Router = require('./framework/router.js'),
   ghostPage = new GhostPage(),
   settingsPage = new SettingsPage(),
   serviceMenuPage = new ServiceMenuPage();
+  distractionsPage = new DistractionsPage(),
+  jokesPage = new JokesPage();
 
 var AppRouter = Router.extend({
 
@@ -27,7 +31,11 @@ var AppRouter = Router.extend({
     ghost: 'ghost',
     healthServices: 'healthServices',
     settings: 'settings',
+<<<<<<< HEAD
     servicesMenu: 'servicesMenu'
+=======
+    distractions: 'distractions'
+>>>>>>> 11e94a245ec8c141613d8acb4a1723b7a0daca99
   },
 
   home: function() {
@@ -53,11 +61,23 @@ var AppRouter = Router.extend({
   settings: function() {
     this.renderView(settingsPage);
   },
+<<<<<<< HEAD
 
   servicesMenu: function () {
     this.renderView(serviceMenuPage);
   }
+=======
+>>>>>>> 11e94a245ec8c141613d8acb4a1723b7a0daca99
 
+  distractions: function() {
+    // this.renderView(distractionsPage);
+    // TODO: For now
+    this.renderView(jokesPage);
+  },
+
+  jokes: function() {
+    this.renderView(jokesPage);
+  }
 });
 
 module.exports = AppRouter;

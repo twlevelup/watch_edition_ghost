@@ -1,6 +1,7 @@
 'use strict';
 
-var Page = require('../../src/js/framework/page');
+var Page = require('../../src/js/framework/page'),
+    $    = require('jquery');
 
 describe('A generic page', function() {
 
@@ -16,6 +17,16 @@ describe('A generic page', function() {
       expect(page.className).toEqual('page');
     });
 
+  });
+
+  describe('timer', function() {
+    it('should go to ghost page if idled for 5 seconds or more', function() {
+      spyOn(global.App, 'navigate');
+      page.render();
+      setTimeout(function() {
+        expect(global.App.navigate).toHaveBeenCalledWith('ghost');
+      }, 5000);
+    });
   });
 
   describe('configuring buttons', function() {
