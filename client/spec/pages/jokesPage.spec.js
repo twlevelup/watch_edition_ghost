@@ -75,6 +75,18 @@ describe('jokes', function() {
       var el = jokesPage.$el;
       expect(el.find('#joke').length).toEqual(1);
     });
+
+    it('should have the up arrow', function() {
+      jokesPage.render();
+      var el = jokesPage.$el;
+      expect(el.find('#up-arrow').length).toEqual(1);
+    });
+
+    it('should have the down arrow', function() {
+      jokesPage.render();
+      var el = jokesPage.$el;
+      expect(el.find('#down-arrow').length).toEqual(1);
+    });
   });
 
 });
