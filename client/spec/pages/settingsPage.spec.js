@@ -15,13 +15,11 @@ describe('Settings', function() {
     settingsPage.setButtonEvents();
   });
 
-  describe('Links', function() {
-
-    it('Contains Emergency Contacts Link', function() {
+  describe('rendering', function() {
+    it('should go to emergency page', function() {
       settingsPage.render();
       expect(settingsPage.$el.html()).toContainText('Emergency Contacts');
     });
-
   });
 
   describe('render', function() {

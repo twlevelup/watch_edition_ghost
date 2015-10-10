@@ -4,6 +4,7 @@
 var Router = require('./framework/router.js'),
   HomePage = require('./pages/homePage'),
   ContactsPage = require('./pages/contactsPage'),
+  EmergencyContactPage = require('./pages/emergencyContactPage'),
   SunPage = require('./pages/sunPage'),
   GhostPage = require('./pages/ghostPage'),
   HealthServicesPage = require('./pages/healthServicesPage'),
@@ -14,6 +15,7 @@ var Router = require('./framework/router.js'),
   SupportGroupPage = require('./pages/supportgroupPage'),
   homePage = new HomePage(),
   contactsPage = new ContactsPage(),
+  emergencyContactPage = new EmergencyContactPage(),
   sunPage = new SunPage(),
   ghostPage = new GhostPage(),
   healthServicesPage = new HealthServicesPage(),
@@ -29,6 +31,7 @@ var AppRouter = Router.extend({
   routes: {
     '': 'home',
     contacts: 'contacts',
+    emergencyContact: 'emergencyContact',
     sun: 'sun',
     ghost: 'ghost',
     healthServices: 'healthServices',
@@ -45,6 +48,10 @@ var AppRouter = Router.extend({
 
   contacts: function() {
     this.renderView(contactsPage);
+  },
+
+  emergencyContact: function(){
+    this.renderView(emergencyContactPage);
   },
 
   healthServices: function () {
