@@ -11,6 +11,8 @@ var Router = require('./framework/router.js'),
   DistractionsPage = require('./pages/distractionsPage'),
   JokesPage = require('./pages/jokesPage'),
   EmergencyContactPage = require('./pages/emergencyContactPage'),
+  EmergencyFailPage = require('./pages/emergencyFailPage'),
+  EmergencyPage = require('./pages/emergencyPage'),
   homePage = new HomePage(),
   contactsPage = new ContactsPage(),
   sunPage = new SunPage(),
@@ -20,7 +22,9 @@ var Router = require('./framework/router.js'),
   settingsPage = new SettingsPage(),
   distractionsPage = new DistractionsPage(),
   jokesPage = new JokesPage(),
-  emergencyContactPage = new EmergencyContactPage();
+  emergencyContactPage = new EmergencyContactPage(),
+  emergencyPage    = new EmergencyPage(),
+  emergencyFailPage    = new EmergencyFailPage();
 
 var AppRouter = Router.extend({
 
@@ -32,7 +36,17 @@ var AppRouter = Router.extend({
     healthServices: 'healthServices',
     settings: 'settings',
     distractions: 'distractions',
-    emergencyContact: 'emergencyContact'
+    emergencyContact: 'emergencyContact',
+    emergencyFail: 'emergencyFail',
+    emergency: 'emergency'
+  },
+
+  emergencyFail: function() {
+    this.renderView(emergencyFailPage);
+  },
+
+  emergency: function() {
+    this.renderView(emergencyPage);
   },
 
   emergencyContact: function() {
