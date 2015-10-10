@@ -66,7 +66,7 @@ describe('The Home Page', function() {
     it('go to ghost page after 30 seconds', function() {
       spyOn(global.App, 'navigate');
       homePage.render();
-      setTimeout(function() { expect(global.App.navigate).toHaveBeenCalledWith('ghost'); }, 30000);
+      setTimeout(function() { expect(global.App.navigate).toHaveBeenCalledWith('ghost'); }, 5000);
     });
 
   });
