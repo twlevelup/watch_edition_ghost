@@ -10,7 +10,7 @@ describe('supportGroup', function() {
 
   var supportgroupPage;
 
-  beforeEach(function () {
+  beforeEach(function() {
     supportgroupPage = new SupportgroupPage();
   });
 
@@ -20,9 +20,9 @@ describe('supportGroup', function() {
     });
   });
 
-  describe('button event handlers', function () {
+  describe('button event handlers', function() {
 
-    beforeEach(function () {
+    beforeEach(function() {
       supportgroupPage.setButtonEvents();
     });
 
@@ -35,7 +35,7 @@ describe('supportGroup', function() {
 
     });
 
-     describe('face', function() {
+    describe('face', function() {
 
       it('should take you to the home page', function() {
         spyOn(global.App, 'navigate');
@@ -77,7 +77,7 @@ describe('supportGroup', function() {
 
   });
 
-  describe('rendering', function () {
+  describe('rendering', function() {
 
     var healthCentres;
 
@@ -106,7 +106,7 @@ describe('supportGroup', function() {
       expect(supportgroupPage.$el).toContainHtml('0411111111');
     });
 
-    it('should produce the correct HTML', function () {
+    it('should produce the correct HTML', function() {
       supportgroupPage.render();
       var html = supportgroupPage.$el.html();
       expect(html).toContainText('AA Adelaide St');
