@@ -42,8 +42,7 @@ var homeScreen = PageView.extend({
 
   getTokenSuccessCallback: function(data) {
     var self = this;
-    var ru = "433313984";
-    var number = "+61433323984";
+    var number = "";
     var body = "Hi, I really need your help. Please call me. Alan";
     var json = {
       to: number,
